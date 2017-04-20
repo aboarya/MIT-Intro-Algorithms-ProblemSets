@@ -7,7 +7,7 @@ Problem: Find a peak in a 1-d array.
 
 Definition: A peak is any elemnt i such that i-1 < i > i+1
 
-Proof: We look at the element n/2, then examine the elemnts on right and left sides.
+Proof: We look at the element n/2, then examine the elements on right and left sides.
 If we find that n/2 is greater than both its left and right elements, then we are done.
 If it is smaller than either of those two elements, then 
 
