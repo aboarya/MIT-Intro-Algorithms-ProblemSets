@@ -11,7 +11,7 @@ This repository holds implementations of the algorithms described in the [MIT Op
 
 ## Peak Finding
 
-A peak in a 1-d array is any integer at index __i__, such that i-1 < i > i+1.  We are only concerned with finding __any__ peak in the 1-d array vs. all peaks.
+A peak in a 1-d array is any integer at index __i__, such that __i-1 < i > i+1__.  We are only concerned with finding __any__ peak in the 1-d array vs. all peaks.
 
 [Solution](./peak-finding)
 
