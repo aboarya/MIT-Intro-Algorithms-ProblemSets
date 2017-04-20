@@ -9,16 +9,16 @@
 *   @section DESCRIPTION
 *
 *   Definition: A peak is any elemnt i such that i-1 < i > i+1
-
+*
 *   Proof: We look at the element n/2, then examine the elements on right and left sides.
 *   If we find that n/2 is greater than both its left and right elements, then we are done.
 *   If it is smaller than either of those two elements, then 
-
+*
 *   1) we choose n/2+1 to n and search for a peak in the left half similar to above.
 *   2) we choose n/2-1 to 1 and search for a peak in the right half similar to above.
-
+*
 *   Complexity: O(log(n))
-
+*
 *   Usage:
 *       $ make oned
 *
