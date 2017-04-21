@@ -14,7 +14,7 @@
 *	since the element at (i,j) is the global maximum at column j.
 *
 *	1) we choose M/2+1 to M if (i+1,j) is greater than (i,j) then repeat
-*	2) we choose M/2-1 to M if (i-1,j) is greater than (i,j) then repeat
+*	2) we choose 0 to M/2-1 if (i-1,j) is greater than (i,j) then repeat
 *
 *	Complexity: O(nlog(n))
 *
