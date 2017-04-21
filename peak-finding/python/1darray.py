@@ -38,6 +38,8 @@ def find_a_peak(array):
     5
     >>> find_a_peak([1,2,3,5,5,4,6,7,8,9])
     5
+    >>> find_a_peak([1,2,1,1,1,1,1])
+    2
     """
     if len(array) == 0:
         return None
@@ -47,11 +49,11 @@ def find_a_peak(array):
 
     half = len(array) // 2
 
-    if array[half-1] <= array[half] and array[half] >= array[half+1]:
+    if array[half-1] < array[half] and array[half] > array[half+1]:
         return array[half]
 
-    if array[half-1] > array[half]:
+    if array[half-1] >= array[half]:
         return find_a_peak(array[0:half])
 
-    if array[half+1] > array[half]:
+    if array[half+1] >= array[half]:
         return find_a_peak(array[half:len(array)])
