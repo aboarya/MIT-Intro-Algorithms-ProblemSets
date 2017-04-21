@@ -22,7 +22,7 @@ A peak in a 2-d array is a hill in the matrix, such that the elemnt (j,j) is gre
 
 ## Document Distance
 
-The distance between two documents is calculated as the angle between the two word count vectors of each of the
+The distance between two documents is calculated as the angle between the word count vector of each of the
 documents.  The `python` implementation was provided as lecture supporting material and the `c++` is my port of it.
 
 The algorithm can be described as follows:
