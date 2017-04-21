@@ -3,21 +3,23 @@
 """
 @author: Sam Mohamed
 
-Problem: Find a peak in a 1-d array.
+Problem: Find a peak in a 2-d array.
 
-Definition: A peak is any elemnt i such that i-1 < i > i+1
+Definition: A peak is any elemnt i that is greater than its neighbouring elements
+in the north, south, east and west cells of the 2-d array.
 
-Proof: We look at the element n/2, then examine the elements on right and left sides.
-If we find that n/2 is greater than both its left and right elements, then we are done.
-If it is smaller than either of those two elements, then 
+Proof: We pick a colum M/2 where is the width of the matrix.  We find the global
+maximum in that colum j giving us element (i,j).  We then examine elements (i-1,j)
+and (i+1,j).  If the element (i,j) is greater than both then we have found the peak
+since the element at (i,j) is the global maximum at column j.
 
-1) we choose n/2+1 to n and search for a peak in the left half similar to above.
-2) we choose n/2-1 to 1 and search for a peak in the right half similar to above.
+1) we choose M/2+1 to M if (i+1,j) is greater than (i,j) then repeat
+2) we choose M/2-1 to M if (i-1,j) is greater than (i,j) then repeat
 
-Complexity: O(log(n))
+Complexity: O(nlog(n))
 
 Usage:
-    $ python3 -m doctest 1darray.py
+    $ python3 -m doctest 2darray.py
 
 """
 def find_max(array):
