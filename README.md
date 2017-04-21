@@ -36,8 +36,10 @@ More formally:
 
 `d(x,y) = arccos(inner_product(x,y) / (norm(x)*norm(y)))`
 where:
-```inner_product(x,y) = x1*y1 + x2*y2 + ... xn*yn
-norm(x) = sqrt(inner_product(x,x))```
+```
+inner_product(x,y) = x1*y1 + x2*y2 + ... xn*yn
+norm(x) = sqrt(inner_product(x,x))
+```
 
 [Python Solution](./document-distance/python)
 
