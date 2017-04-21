@@ -1,6 +1,6 @@
-.PHONY: all oned
+.PHONY: all oned twod
 
-all: clean oned
+all: clean oned twod
 
 clean:
 	rm -rf *.out
@@ -10,4 +10,10 @@ _oned:
 	./1darray.out
 
 oned: clean _oned
+
+_twod:
+	g++ -std=c++11 2darray.cpp -o 2darray.out
+	./2darray.out
+
+twod: clean _twod
 
