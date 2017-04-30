@@ -55,7 +55,7 @@ int find_max(std::vector<int> col)
 	int index = 0;
 	for (int i=0; i < col.size(); i++)
 	{
-		if (max >= col[i])
+		if (max <= col[i])
 		{
 			max = col[i];
 			index = i;
@@ -64,46 +64,61 @@ int find_max(std::vector<int> col)
 	return index;
 }
 
-int find_a_peak(Matrix matrix)
+int find_a_peak(Matrix matrix, int n, int m)
 {
-	// int len = matrix[0].size();
-	// int m = len / 2;
-	// std::cout << "m is " << m;
-	// std::vector<int> col(3, 0);
-	// for (int i=0; i < m; i++)
-	// 	col[i] = matrix[i][m];
+
+	if (m <= 2) {
+		return matrix(0, 0);
+	}
+
 	
-	// int n = find_max(col);
-	// std::cout << " n is " << n;
+	int mid = (m/2);
+	int start, end;
+	std::vector<int> col(n);
+	for (int i=0; i < n; i++) {
+		col[i] = matrix(i, mid);
+	}
 
-	// if (matrix[0].size() == 2) {return matrix[n][m];}
+	int max = find_max(col);
 
-	// if (matrix[n][m-1] < matrix[n][m] > matrix[n][m+1]){return matrix[n][m];}
-	
-	// if (matrix[n][m-1] >= matrix[n][m])
-	// {
+	if (matrix(max, mid-1) < matrix(max, mid) > matrix(max, mid+1)) { return matrix(max, mid);}
 
- //   		std::vector<std::vector<int> > submatrix; 
- //    	for (int i=0; i < matrix.size(); i++) {
- //        	submatrix.push_back(std::vector<int>(matrix[i].begin(), matrix[i].begin() + m));
- //    	}
- //    	return find_a_peak(submatrix);
-	// }
+	if (matrix(max, mid-1) >= matrix(max, mid))
+	{
+		// std::cout << " test " << matrix(max, mid-1) << " end " << mid << "\n";
+		start = 0; end = mid;
+	}
 
-	// if (matrix[n][m+1] >= matrix[n][m])
-	// {
- //   		std::vector<std::vector<int> > submatrix; 
- //    	for (int i=0; i < matrix.size(); i++) {
- //        	submatrix.push_back(std::vector<int>(matrix[i].begin() + m, matrix[i].end()));
- //    	}
- //    	return find_a_peak(submatrix);
-	// }
+	if (matrix(max, mid+1) >= matrix(max, mid))
+	{
+		// std::cout << " test1 " << matrix(max, mid+1) << " start " << mid << " end " << m << "\n";
+		start = mid; end = m;
+	}
 
-	return 0;
+	Matrix submatrix(3, mid);
+    for (int i=0; i < 3; i++){
+    	for (int j=start; j < end; j++) {
+    		submatrix(i, j) = matrix(i, j);
+    	}
+    }
+
+    return find_a_peak(submatrix, n, mid);
+
 }
 
 int main()
 {
+	int n = 3, m = 9;
+	int tmp [27] = {1, 2, 2, 4, 2, 6, 7, 8, 9,
+		            1, 2, 3, 5, 3, 1, 7, 8, 9,
+		            1, 2, 1, 4, 1, 6, 7, 8, 9};
+
     Matrix matrix(3,9);
-    std::cout << "the peak is " << find_a_peak(matrix) << "\n";
+    for (int i=0; i < 3; i++){
+    	for (int j=0; j<9; j++) {
+    		matrix(i,j) = tmp[i*9+j];
+    	}
+    }
+    
+    std::cout << find_a_peak(matrix, n, m) << "\n";
 }
