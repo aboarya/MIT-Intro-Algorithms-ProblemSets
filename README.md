@@ -5,6 +5,7 @@
 * [Introduction](#introduction)
 * [Peak Finding](#peak-finding)
 * [Document Distance](#document-distance)
+* [Merge Sort](#merge-sort)
 
 ## Introduction
 
@@ -42,5 +43,12 @@ norm(x) = sqrt(inner_product(x,x))
 ```
 
 [Python Solution](./document-distance/python)
+[C++ Solution](./document-distance/cpp)
 
+## Merge Sort
+
+A `divide and conquer` sorting technique that sequences data by continuously merging items in the list. Every single item in the original unordered list is merged with another, creating groups of two. Every two-item group is merged, creating groups of four and so on until there is one ordered list.
+
+[Python Solution](./merge-sort/python)
+[C++ Solution](./merge-sort/cpp)
 
