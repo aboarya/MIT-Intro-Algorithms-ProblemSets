@@ -6,6 +6,7 @@
 * [Peak Finding](#peak-finding)
 * [Document Distance](#document-distance)
 * [Merge Sort](#merge-sort)
+* [Binary Search Trees](#binary-search-trees)
 
 ## Introduction
 
@@ -43,6 +44,7 @@ norm(x) = sqrt(inner_product(x,x))
 ```
 
 [Python Solution](./document-distance/python)
+
 [C++ Solution](./document-distance/cpp)
 
 ## Merge Sort
@@ -50,5 +52,18 @@ norm(x) = sqrt(inner_product(x,x))
 A `divide and conquer` sorting technique that sequences data by continuously merging items in the list. Every single item in the original unordered list is merged with another, creating groups of two. Every two-item group is merged, creating groups of four and so on until there is one ordered list.
 
 [Python Solution](./merge-sort/python)
+
 [C++ Solution](./merge-sort/cpp)
 
+## Binary Search Trees
+
+`BST's` are an abstract `data structure` that is visualized in the shape of a `tree` which allows for `binary search`.
+
+The `binary search` property is achievable becasuse the `left child` of any given `node` as well as all the subtrees of that `child` are smaller than that `node`.  Conversely the `right child` of a `node` and all the subtrees of that `child` are greater than the `node`.
+
+`AVL` trees are a special form of BST that are balanced.  An `AVL` tree is a `BST` where the `heights` of the two `child subtrees` of any `node` differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
+
+
+[Python Solution](./binary-search-trees/python)
+
+[C++ Solution](./binary-search-trees/cpp)
