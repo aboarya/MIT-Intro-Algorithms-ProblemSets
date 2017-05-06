@@ -22,8 +22,8 @@ class Node:
     for all operations.
 
     The node class' operation methods are recursive because
-    node can potentially have a rigth and left child,
-    which themselves are node and have subnodes.
+    nodes can potentially have a right and a left child,
+    which themselves are nodes and have subnodes.
     '''
     def __init__(self, val):
         self.value = val
@@ -34,9 +34,8 @@ class Node:
         '''
         Inserting a new node as a leaf.
 
-        Recursively traverse
-        the tree by calling the children's insert method
-        until the end of the tree.
+        Recursively traverse the tree by calling the children's
+        insert method until the end of the tree.
         '''
         if self.value == data:
             return False
